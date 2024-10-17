@@ -4,9 +4,10 @@ function graph_projectile(b, m, initial_velocity_x, initial_velocity_y, i)
 
     acceleration_x = @(t, v_x) (-b * v_x)/m; 
     acceleration_y = @(t, v_y) (-m*g - b * v_y)/m;
-    
+    % acceleration_y = @(t, v_y) (-m*g + 1/2 * 0.5 * 1.225 * 0.2286.^2 * pi* v_y.^2)/m;
+
     next_position_x = 0;
-    next_position_y = 1600;
+    next_position_y = 1666;
 
     next_velocity_x = initial_velocity_x;
     next_velocity_y = initial_velocity_y;
