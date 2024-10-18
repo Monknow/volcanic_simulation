@@ -2,9 +2,13 @@ function graph_projectile(b, m, initial_velocity_x, initial_velocity_y, i)
     g = 9.8;
     colors = [".r", ".g", ".b", ".c", ".k"];
 
-    acceleration_x = @(t, v_x) (-b * v_x)/m; 
-    acceleration_y = @(t, v_y) (-m*g - b * v_y)/m;
-    % acceleration_y = @(t, v_y) (-m*g + 1/2 * 0.5 * 1.225 * 0.2286.^2 * pi* v_y.^2)/m;
+   acceleration_x = @(t, v_x) (-b * v_x)/m; % Linear
+   % acceleration_x = @(t, v_y) (-1/2 * 0.5 * 1.225 * 0.2286.^2 * pi*
+   % v_y.^2)/m; % Quadratic
+
+    acceleration_y = @(t, v_y) (-m*g - b * v_y)/m; % Linear
+    % acceleration_y = @(t, v_y) (-m*g + 1/2 * 0.5 * 1.225 * 0.2286.^2 *
+    % pi* v_y.^2)/m; % Quadratic
 
     next_position_x = 0;
     next_position_y = 1666;
